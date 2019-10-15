@@ -9,7 +9,6 @@ C = c -1
 sec = 0
 
 while True:
-    print(arr)
     if sec > 100:
         print(-1)
         break
@@ -48,17 +47,15 @@ while True:
         arr = narr
 
     else:
+
         tarr = [[0] * r for _ in range(c)]
         for i in range(r):
             for j in range(c):
                 tarr[j][i] = arr[i][j]
 
-
         for ar in tarr:
             tmp = []
-            # 0제거
             ct = sorted(Counter(ar).items(), key=lambda x: (x[1],x[0]))
-
             for x in ct:
                 if x[0] == 0 or len(tmp) > 100:
                     continue
@@ -72,6 +69,8 @@ while True:
             if len(x) < nr:
                 x.extend([0] * (nr - len(x)))
 
-        for i in range(c):
-            for j in range(r):
+        arr = [[0] * len(narr) for _ in range(len(narr[0]))]
+        for i in range(len(narr)):
+            for j in range(len(narr[0])):
                 arr[j][i] = narr[i][j]
+
